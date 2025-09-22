@@ -1,48 +1,76 @@
 # Project Setup and Start Guide
 
-This project uses Laravel as the framework and SQLite as the database. To set up and start the project, follow these steps:
+This project uses **Laravel** as the framework and **SQLite** as the database.  
+Follow the steps below to set up and run the project on your local machine.
 
-**Step 1: Clone the Project**
+---
 
-Clone the project repository to your local machine using Git:
+## ✨
+
+![Laravel](https://img.shields.io/badge/Laravel-11.x-red?logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?logo=sqlite&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+## 🛠 Project Setup
+
+### Step 1: Clone the Project
+
 ```bash
 git clone https://github.com/your-username/project-name.git
-```
-**Step 2: Install Dependencies**
+cd project-name
 
-Navigate to the project directory and install the required dependencies using Composer:
+```
+
+### Step 2: Install Dependencies
+
 ```bash
 composer install
-```
-**Step 3: Set Up Environment Variables**
 
-Copy the `.env.example` file to `.env` and update the database settings to use SQLite:
+```
+
+### Step 3: Set Up Environment Variables
+
 ```bash
+
 cp .env.example .env
+
+In .env file, set:
+
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
+
+Make sure the SQLite file exists or create an empty file at the specified path.
+
 ```
-In the `.env` file, set `DB_CONNECTION` to `sqlite` and `DB_DATABASE` to the path where you want to store the SQLite database file.
 
-**Step 4: Generate Application Key**
+### Step 4: Generate Application Key
 
-Generate a new application key using the following command:
 ```bash
+
 php artisan key:generate
-```
-**Step 5: Run Migrations**
 
-Run the migrations to set up the database schema:
+```
+
+### Step 5: Run Migrations
+
 ```bash
+
 php artisan migrate
-```
-**Step 6: Seed the Database (Optional)**
 
-If you want to populate the database with some initial data, run the following command:
+```
+### Step 6: Seed the Database (Optional)
+
 ```bash
-php artisan db:seed
-```
-**Step 7: Start the Development Server**
 
-Start the development server using the following command:
+php artisan db:seed
+
+```
+
+### Step 7: Start the Development Server
+
 ```bash
 php artisan serve
 ```
